@@ -8,3 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const PORT = process.env.PORT || 0004;
+
+app.use(express.static("public"));
+
+app.get("/api/notes", function(req, res){
+    res.json(notes);
+});
+
+
